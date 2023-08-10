@@ -1,0 +1,71 @@
+@import "./lib.scss";
+
+.container {
+  position: absolute;
+  width: 100%;
+  min-width: 270px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #110e1b;
+  max-width: 692px;
+  height: 362px;
+  width: 90%;
+  @include flex(column, center, center);
+  h1,
+  p,
+  button {
+    margin: 20px 0;
+    text-align: center;
+  }
+  h1 {
+    color: #7c162e;
+    font-size: 2rem;
+  }
+  p {
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 300;
+  }
+
+  input {
+    width: 70%;
+    max-width: 409px;
+    height: 40px;
+    outline: none;
+    text-align: center;
+  }
+
+  button {
+    max-width: 409px;
+    width: 70%;
+    font-weight: bold;
+    background-color: $buttons_color;
+    height: 40px;
+    color: $text_color;
+    text-align: center;
+    transition: 200ms;
+    font-size: 1.3rem;
+    border: 0;
+  }
+  button:hover {
+    cursor: pointer;
+    background-color: $special_text_color;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .container {
+    height: 310px;
+    p {
+      font-size: 1.1rem;
+    }
+    button {
+      height: 30px;
+      font-size: 1.1rem;
+    }
+    input {
+      font-size: 1.2rem;
+    }
+  }
+}

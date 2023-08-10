@@ -1,0 +1,181 @@
+@import "./lib.scss";
+
+.container {
+  width: 100%;
+  height: 100%;
+  @include flex(column, space-between, center);
+  min-width: 250px;
+}
+.RoomCode {
+  color: white;
+  text-decoration: underline;
+}
+.main {
+  width: 100%;
+  height: 100%;
+  @include flex(column, flex-start, center);
+  h3 {
+    color: gold;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+  }
+  * {
+    font-size: 1rem;
+  }
+  textarea {
+    * {
+      font-size: 1.2rem;
+    }
+  }
+  button {
+    background-color: #3c162f;
+    cursor: pointer;
+  }
+  button:hover {
+    background-color: $special_text_color;
+  }
+}
+
+.startContainer {
+  width: 100%;
+  height: 100%;
+  @include flex(column, center, center);
+  gap: 20px;
+  img {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+.voteArea {
+  width: 50%;
+  max-width: 400px;
+  display: grid;
+  padding: 20px 0;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background-color: $emoji_box_color;
+  div {
+    color: white;
+    @include flex(column, center, center);
+    img {
+      padding: 10px;
+      width: 100px;
+      height: 100px;
+    }
+    img.active {
+      border-radius: 50%;
+      background-color: #3c162f;
+    }
+  }
+}
+
+.startContainer textarea {
+  width: 50%;
+  max-width: 400px;
+  height: 200px;
+  padding: 10px;
+  outline: none;
+}
+
+.startContainer button {
+  width: 50%;
+  padding: 20px;
+  color: white;
+  border: none;
+  background-color: #3c162f;
+  max-width: 400px;
+}
+
+.footer {
+  padding: 10px 0;
+  color: #ffffff93;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+.Score {
+  z-index: 999;
+  position: fixed;
+  left: 0;
+  transition: 500ms;
+  transform: translateX(-100%);
+  top: 0;
+  height: 100vh;
+  width: 300px;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  h1 {
+    text-align: center;
+    font-size: 1rem;
+    color: #3c162f;
+    padding: 20px 0;
+  }
+  ul {
+    list-style: none;
+    @include flex(column, center, space-evenly);
+    gap: 20px;
+    li {
+      text-align: center;
+      font-size: 1rem;
+    }
+  }
+}
+
+.ScoreListOn {
+  transform: translateX(0);
+}
+
+@media screen and (max-width: 450px) {
+  .startContainer {
+    img {
+      width: 170px;
+      height: 170px;
+    }
+  }
+  .voteArea {
+    div {
+      img {
+        padding: 10px;
+        width: 70px !important;
+        height: 70px !important;
+      }
+    }
+  }
+}
+
+.ScoreCheck {
+  position: fixed;
+  top: 20px;
+  width: 80px;
+  background-color: #3c162f;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  left: 30px;
+  transition: 500ms;
+  cursor: pointer;
+}
+
+.ScoreCheck:hover {
+  background-color: $special_text_color;
+}
+
+.ScoreOn {
+  transform: translateX(300px);
+}
+
+@media screen and (max-width: 441px) {
+  .Score {
+    width: 200px;
+  }
+
+  .ScoreCheck {
+    left: 10px;
+  }
+  .ScoreOn {
+    transform: translateX(200px);
+  }
+}

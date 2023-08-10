@@ -1,0 +1,148 @@
+@import "./lib.scss";
+
+.container {
+  width: 100%;
+  height: 100%;
+  @include flex(column, space-between, center);
+  min-width: 250px;
+}
+
+.main {
+  width: 50%;
+  height: 100%;
+  @include flex(row, center, center);
+}
+
+.left_section {
+  margin-right: 30px;
+  flex: 0.5;
+  @include flex(row, center, center);
+
+  img {
+    width: 256px;
+  }
+}
+.right_section {
+  @include flex(column, space-between, flex-start);
+  flex: 0.5;
+
+  h3,
+  input,
+  div {
+    width: 530px;
+  }
+  input {
+    outline: none;
+    padding: 0 10px;
+    border: 0;
+    line-height: 40px;
+  }
+  h3 {
+    white-space: nowrap;
+    font-size: 3rem;
+    color: $text_color;
+    span {
+      font-size: 3rem;
+      color: $special_text_color;
+    }
+  }
+  div {
+    margin: 10px 0;
+    @include flex(row, space-between, center);
+    a {
+      background-color: $buttons_color;
+      line-height: 40px;
+      flex: 0.49;
+      color: $text_color;
+      text-align: center;
+      transition: 200ms;
+      font-size: 1.1rem;
+      text-decoration: none;
+    }
+    a:hover {
+      cursor: pointer;
+      background-color: $special_text_color;
+    }
+  }
+}
+
+.footer {
+  padding: 10px 0;
+  color: #ffffff93;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .main {
+    width: 80%;
+  }
+  .left_section {
+    img {
+      width: 190px;
+    }
+    flex: 0.5;
+  }
+  .right_section {
+    flex: 0.5;
+    h3,
+    input,
+    div {
+      width: 400px;
+    }
+    input {
+      line-height: 30px;
+    }
+    h3 {
+      &,
+      span {
+        font-size: 2rem;
+      }
+    }
+    flex: 0.4;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main {
+    flex-direction: column;
+    width: 90%;
+  }
+  .left_section {
+    flex: 0.3;
+    align-items: flex-end;
+    margin: 0;
+    img {
+      width: 170px;
+    }
+  }
+  .right_section {
+    width: 100%;
+    flex: 0.7;
+    margin-top: 0;
+    justify-content: center;
+    h3,
+    input,
+    div {
+      width: 100%;
+    }
+    input {
+      margin-top: 10px;
+    }
+    h3 {
+      &,
+      span {
+        font-size: 1.8rem;
+        text-align: center;
+      }
+    }
+    div {
+      flex-direction: column;
+      a {
+        width: 100%;
+        margin: 5px 0;
+      }
+    }
+    flex: 0.4;
+  }
+}

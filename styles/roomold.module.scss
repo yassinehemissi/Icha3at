@@ -1,0 +1,318 @@
+@import "./lib.scss";
+
+.container {
+  width: 100%;
+  height: 100%;
+  @include flex(column, space-between, center);
+  min-width: 250px;
+}
+
+.room_code {
+  position: absolute;
+  right: 0;
+  color: $text_color;
+  padding: 5px 10px;
+  font-size: 1.2rem;
+  span {
+    color: $special_text_color;
+  }
+}
+
+.main {
+  width: 100%;
+  @include flex(column, flex-start, center);
+}
+
+.post_form {
+  margin-top: 60px;
+  width: 80%;
+  @include flex(row, flex-start, center);
+  .post_left_section {
+    width: 256px;
+    @include flex(row, flex-start, center);
+    img {
+      width: 256px;
+    }
+  }
+  .post_right_section {
+    margin-left: 30px;
+    width: calc(100% - 256px);
+    @include flex(column, center, flex-start);
+    textarea {
+      outline: none;
+      resize: none;
+      height: 193px;
+      padding: 10px 10px;
+      width: 100%;
+    }
+    input {
+      max-width: 409px;
+      width: 100%;
+      background-color: $buttons_color;
+      color: $text_color;
+      border: 0;
+      outline: 0;
+      margin-top: 10px;
+      line-height: 50px;
+      font-size: 1.1rem;
+      transform: 200ms;
+    }
+    input:hover {
+      cursor: pointer;
+      background-color: $special_text_color;
+    }
+  }
+}
+
+.rumors_section {
+  margin-top: 40px;
+  @include flex(column, flex-start, center);
+  width: 80%;
+  h1 {
+    font-size: 2rem;
+    width: 100%;
+    text-align: left;
+    color: $text_color;
+  }
+  ul {
+    margin-top: 20px;
+    width: 100%;
+    list-style: none;
+    li {
+      margin-top: 15px;
+      height: 135px;
+      width: 100%;
+      @include flex(row, center, center);
+      color: $text_color;
+      .rumor_text {
+        background-color: $text_box_color;
+        width: 80%;
+        height: 100%;
+        p {
+          padding: 10px;
+          font-size: 1.1rem;
+        }
+      }
+      .rumor_vote {
+        width: 20%;
+        height: 100%;
+        background-color: $emoji_box_color;
+        @include flex(row, space-evenly, center);
+        div {
+          img {
+            width: 57px;
+          }
+          p {
+            text-align: center;
+            font-size: 1.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+.footer {
+  padding: 10px 0;
+  color: #ffffff93;
+  font-weight: 300;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 1000px) {
+  .post_form {
+    margin-top: 60px;
+    width: 80%;
+    @include flex(row, flex-start, center);
+    .post_left_section {
+      width: 186px;
+      @include flex(row, flex-start, center);
+      img {
+        width: 186px;
+      }
+    }
+    .post_right_section {
+      width: calc(100% - 186px);
+      @include flex(column, center, flex-start);
+      textarea {
+        height: 166px;
+      }
+      input {
+        line-height: 40px;
+      }
+    }
+  }
+  .rumors_section {
+    @include flex(column, flex-start, center);
+    width: 80%;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        margin-top: 15px;
+        height: 105px;
+        width: 100%;
+        @include flex(row, center, center);
+        color: $text_color;
+        .rumor_text {
+          background-color: $text_box_color;
+          width: 80%;
+          height: 100%;
+          p {
+            padding: 10px;
+          }
+        }
+        .rumor_vote {
+          min-width: 105px;
+          width: 20%;
+          height: 100%;
+          background-color: $emoji_box_color;
+          @include flex(row, space-evenly, center);
+          div {
+            img {
+              width: 37px;
+            }
+            p {
+              text-align: center;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1000px) {
+  .post_form {
+    margin-top: 60px;
+    width: 80%;
+    @include flex(row, flex-start, center);
+    .post_left_section {
+      width: 186px;
+      @include flex(row, flex-start, center);
+      img {
+        width: 186px;
+      }
+    }
+    .post_right_section {
+      width: calc(100% - 186px);
+      @include flex(column, center, flex-start);
+      textarea {
+        height: 166px;
+      }
+      input {
+        line-height: 40px;
+      }
+    }
+  }
+  .rumors_section {
+    @include flex(column, flex-start, center);
+    width: 80%;
+    h1 {
+      font-size: 1.8rem;
+    }
+    ul {
+      li {
+        margin-top: 15px;
+        height: 105px;
+        width: 100%;
+        @include flex(row, center, center);
+        color: $text_color;
+        .rumor_text {
+          background-color: $text_box_color;
+          width: 80%;
+          height: 100%;
+          p {
+            padding: 10px;
+          }
+        }
+        .rumor_vote {
+          min-width: 105px;
+          width: 20%;
+          height: 100%;
+          background-color: $emoji_box_color;
+          @include flex(row, space-evenly, center);
+          div {
+            img {
+              width: 37px;
+            }
+            p {
+              text-align: center;
+              font-size: 1.2rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .post_form {
+    margin-top: 60px;
+    width: 80%;
+    @include flex(column, flex-start, center);
+    .post_left_section {
+      width: 164px;
+      @include flex(row, center, center);
+      img {
+        width: 164px;
+      }
+    }
+    .post_right_section {
+      margin: 0;
+      margin-top: 30px;
+      width: 100%;
+      @include flex(column, center, flex-start);
+      textarea {
+        height: 166px;
+      }
+      input {
+        max-width: none;
+      }
+    }
+  }
+  .rumors_section {
+    @include flex(column, flex-start, center);
+    width: 80%;
+    h1 {
+      text-align: center;
+    }
+    ul {
+      li {
+        margin-top: 15px;
+        height: 270px;
+        width: 100%;
+        @include flex(column, center, center);
+        color: $text_color;
+        .rumor_text {
+          background-color: $text_box_color;
+          width: 100%;
+          height: 100%;
+          p {
+            padding: 10px;
+          }
+        }
+        .rumor_vote {
+          min-width: 105px;
+          width: 100%;
+          height: 100%;
+          background-color: $emoji_box_color;
+          @include flex(row, space-evenly, center);
+          div {
+            img {
+              width: 57px;
+            }
+            p {
+              margin-top: 10px;
+              text-align: center;
+              font-size: 1.5rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}

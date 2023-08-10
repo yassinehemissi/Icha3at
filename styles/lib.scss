@@ -1,0 +1,19 @@
+$text_color: #fff;
+$input_color: #d9d9d9;
+$buttons_color: #3c162f;
+$text_box_color: #3c162f;
+$emoji_box_color: #110e1b;
+$special_text_color: #7c162e;
+
+@mixin flex($a, $b, $c) {
+  display: flex;
+  flex-direction: $a;
+  justify-content: $b;
+  align-items: $c;
+}
+
+.footer {
+  padding: 10px 0;
+  color: #ffffff80;
+  font-weight: lighter;
+}
