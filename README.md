@@ -9,7 +9,7 @@ Icha3at is a web-based game application centered around sharing rumors among fri
 
 #### Libs:
 
-* [Next.js 12](https://love2d.org/)
+* [Next.js 12](https://nextjs.org/)
 * [Socket.IO](https://socket.io/)
 
 #### Assets: 
